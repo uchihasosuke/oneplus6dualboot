@@ -48,11 +48,11 @@ The script utilizes `parted` to resize and create partitions on `/dev/block/sda`
 1. Copy the script to the target device.
 2. Grant execution permissions:
    ```bash
-   chmod +x partition_script.sh
+   chmod +x setup_in_twrp.sh
    ```
 3. Run the script:
    ```bash
-   ./partition_script.sh
+   ./setup_in_twrp.sh
    ```
 
 ## Notes
