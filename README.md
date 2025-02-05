@@ -1,10 +1,10 @@
-# oneplus 6 dualboot nethunter pro with android
+# oneplus 6 dualboot Nethunter pro with android
 
-# Partitioning Script for Android, Kali Nethunter, and Tools
+# Partitioning Script for Android, Kali Nethunter pro, and Tools
 
 This script is designed to partition the internal storage of a device into three parts:
 1. **Android Userdata Partition** (Resizable, remaining storage after allocation)
-2. **Kali Nethunter Partition** (Fixed 20GB)
+2. **Kali Nethunter pro Partition** (Fixed 20GB)
 3. **Tools Partition** (Fixed 500MB)
 
 ## How the Partitioning Works
@@ -19,9 +19,9 @@ The script utilizes `parted` to resize and create partitions on `/dev/block/sda`
 ./parted /dev/block/sda "resizepart 17 39.132GB"
 ```
 
-### 2. Creating Partition for Kali Nethunter
+### 2. Creating Partition for Kali Nethunter pro
 - A new partition is created starting from **39.132GB** and ending at **59.132GB**.
-- This allocates exactly **20GB** for Kali Nethunter.
+- This allocates exactly **20GB** for Kali Nethunter pro.
 
 ```bash
 ./parted /dev/block/sda "mkpart primary ext4 39.132GB 59.132GB"
@@ -41,7 +41,7 @@ The script utilizes `parted` to resize and create partitions on `/dev/block/sda`
 | Partition | Start | End | Size |
 |-----------|--------|------|------|
 | Android Userdata | 0GB | 39.132GB | ~39.132GB |
-| Kali Nethunter | 39.132GB | 59.132GB | 20GB |
+| Kali Nethunter pro | 39.132GB | 59.132GB | 20GB |
 | Tools | 59.132GB | 59.632GB | 500MB |
 
 ## Usage Instructions
@@ -59,7 +59,4 @@ The script utilizes `parted` to resize and create partitions on `/dev/block/sda`
 - Ensure you have backups before modifying partitions.
 - The script assumes the device storage is around **60GB**.
 - Any existing data on the resized partitions **may be lost**, so proceed with caution.
-
-## License
-This script is open-source and can be modified as needed.
 
